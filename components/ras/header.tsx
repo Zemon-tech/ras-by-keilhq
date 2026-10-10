@@ -58,7 +58,7 @@ export function Header() {
             className="group rounded-lg inline-flex items-center gap-1.5 px-3 sm:px-3.5 h-8 border border-ras-charcoal bg-ras-charcoal text-ras-background text-[11px] sm:text-xs font-semibold tracking-wider uppercase hover:bg-ras-orange hover:border-ras-orange transition-colors shadow-sm cursor-pointer"
             render={
               <a
-                href="https://keilhq.com/community"
+                href="https://tally.so/r/b5BdP7"
                 target="_blank"
                 rel="noopener noreferrer"
               />
