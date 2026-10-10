@@ -1,7 +1,17 @@
 import React from "react";
+import type { Metadata } from "next";
 import { GUESTS } from "@/lib/data/guests";
 import { getEpisodesByGuestSlug } from "@/lib/data/episodes";
 import { GuestRow } from "@/components/ras/guest/guest-row";
+
+export const metadata: Metadata = {
+  title: "Guest Archive",
+  description:
+    "Founders, builders, researchers and operators shaping India's frontier technology landscape. Candid conversations on ideas, execution and what comes next.",
+  alternates: {
+    canonical: "/guests",
+  },
+};
 
 export default function GuestsArchivePage() {
   const guests = [...GUESTS].sort((a, b) => {

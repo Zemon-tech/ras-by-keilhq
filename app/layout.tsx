@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/ras/header";
 import { Footer } from "@/components/ras/footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION } from "@/lib/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -13,21 +14,61 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#FAF9F6",
+};
+
 export const metadata: Metadata = {
-  title: "RAS by KeilHQ — Rise And Shine Podcast",
-  description:
-    "The official podcast by KeilHQ featuring the founders, builders, operators, and investors shaping what's next in Indian and global technology.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "RAS podcast",
+    "Rise And Shine",
+    "KeilHQ",
+    "Indian tech podcast",
+    "startup podcast India",
+    "founders",
+    "builders",
+    "researchers",
+    "frontier technology",
+    "deeptech India",
+  ],
+  authors: [{ name: "KeilHQ", url: "https://keilhq.in" }],
+  creator: "KeilHQ",
+  publisher: "KeilHQ",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "RAS by KeilHQ — Rise And Shine Podcast",
-    description:
-      "Unfiltered conversations with the founders, operators, deeptech researchers, and investors building defining generational companies.",
-    siteName: "RAS by KeilHQ",
     type: "website",
+    url: "/",
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — Conversations that build what's next.`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@keilhq",
     creator: "@keilhq",
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
