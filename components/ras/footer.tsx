@@ -45,7 +45,7 @@ export function Footer() {
                     className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl border-ras-border bg-ras-surface/70 text-ras-black hover:border-ras-black hover:bg-ras-black hover:text-ras-background shadow-sm cursor-pointer"
                     render={
                       <a
-                        href="https://instagram.com/keilhq"
+                        href="https://www.instagram.com/rasbykeilhq/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
@@ -57,7 +57,7 @@ export function Footer() {
                 }
               />
               <TooltipContent className="font-mono text-xs uppercase tracking-wider">
-                Instagram / @keilhq
+                Instagram / @rasbykeilhq
               </TooltipContent>
             </Tooltip>
 
@@ -70,7 +70,7 @@ export function Footer() {
                     className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl border-ras-border bg-ras-surface/70 text-ras-black hover:border-ras-black hover:bg-ras-black hover:text-ras-background shadow-sm cursor-pointer"
                     render={
                       <a
-                        href="https://x.com/keilhq"
+                        href="https://x.com/rasbykeilhq"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="X"
@@ -82,7 +82,7 @@ export function Footer() {
                 }
               />
               <TooltipContent className="font-mono text-xs uppercase tracking-wider">
-                X / @keilhq
+                X / @rasbykeilhq
               </TooltipContent>
             </Tooltip>
 
@@ -95,7 +95,7 @@ export function Footer() {
                     className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl border-ras-border bg-ras-surface/70 text-ras-black hover:border-ras-black hover:bg-ras-black hover:text-ras-background shadow-sm cursor-pointer"
                     render={
                       <a
-                        href="https://youtube.com/@keilhq"
+                        href="https://www.youtube.com/@RAS-by-KeilHQ"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="YouTube"
@@ -107,7 +107,7 @@ export function Footer() {
                 }
               />
               <TooltipContent className="font-mono text-xs uppercase tracking-wider">
-                YouTube / @keilhq
+                YouTube / @RAS-by-KeilHQ
               </TooltipContent>
             </Tooltip>
           </div>

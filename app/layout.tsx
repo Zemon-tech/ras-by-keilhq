@@ -60,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@keilhq",
-    creator: "@keilhq",
+    site: "@rasbykeilhq",
+    creator: "@rasbykeilhq",
     title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
     images: ["/opengraph-image"],
