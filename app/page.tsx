@@ -18,6 +18,15 @@ const jsonLd = {
         name: "KeilHQ",
         url: "https://keilhq.in",
       },
+      publisher: {
+        "@type": "Organization",
+        name: "KeilHQ",
+        url: "https://keilhq.in",
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/icon.png`,
+        },
+      },
     },
     {
       "@type": "WebSite",
