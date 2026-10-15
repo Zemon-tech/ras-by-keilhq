@@ -241,12 +241,19 @@ body::-webkit-scrollbar,
 .animate-marquee {
   display: flex;
   width: max-content;
+  max-width: none;
   will-change: transform;
-  animation: marquee 26s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
 
 .dark {

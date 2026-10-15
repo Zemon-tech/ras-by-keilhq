@@ -57,6 +57,20 @@ const NETWORK_PARTNERS = [
     height: 90,
     className: "h-8 sm:h-10 md:h-12",
   },
+  {
+    name: "MiloPure AI",
+    src: "/milopure.png",
+    width: 200,
+    height: 200,
+    className: "h-10 sm:h-12 md:h-14",
+  },
+  {
+    name: "Nexus Strategies",
+    src: "/nexus-strategies.png",
+    width: 832,
+    height: 483,
+    className: "h-8 sm:h-10 md:h-12",
+  },
 ];
 
 export function EpisodeHero({ episode: _episode }: EpisodeHeroProps) {
@@ -163,20 +177,32 @@ export function EpisodeHero({ episode: _episode }: EpisodeHeroProps) {
 
         {/* Infinite Marquee Track with Feathered Edge Gradients */}
         <div className="relative w-full overflow-hidden py-4 sm:py-6 md:py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="animate-marquee flex items-center gap-12 sm:gap-16 md:gap-20">
-            {/* Duplicated array for seamless infinite looping */}
-            {[...NETWORK_PARTNERS, ...NETWORK_PARTNERS].map((partner, index) => (
+          <div className="animate-marquee flex w-max items-center">
+            {/* Two identical halves for a seamless -50% loop.
+                NOTE: no `gap` on the animated track — per-item padding keeps
+                both halves exactly equal width so translateX(-50%) lands cleanly. */}
+            {[0, 1].map((half) => (
               <div
-                key={`${partner.name}-${index}`}
-                className="flex items-center justify-center shrink-0 h-12 sm:h-14 md:h-16 px-2"
+                key={half}
+                aria-hidden={half === 1}
+                className="flex shrink-0 items-center"
               >
-                <Image
-                  src={partner.src}
-                  alt={partner.name}
-                  width={partner.width}
-                  height={partner.height}
-                  className={`${partner.className} w-auto object-contain opacity-90 hover:opacity-100 transition-opacity`}
-                />
+                {NETWORK_PARTNERS.map((partner) => (
+                  <div
+                    key={half === 0 ? partner.name : `${partner.name}-clone`}
+                    className="flex h-12 shrink-0 items-center justify-center px-6 sm:h-14 sm:px-8 md:h-16 md:px-10"
+                  >
+                    <Image
+                      src={partner.src}
+                      alt={half === 0 ? partner.name : ""}
+                      width={partner.width}
+                      height={partner.height}
+                      loading="eager"
+                      draggable={false}
+                      className={`${partner.className} w-auto object-contain opacity-90 transition-opacity hover:opacity-100`}
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
